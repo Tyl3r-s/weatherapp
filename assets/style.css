@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* font-weight */
+    --fw-reg: 400;
+    --fw-bold: 900;
+    /* font-size */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    /* background shadow */
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.12em 0.25em rgba(0,0,0,.15);
+    /* colours */
+    --clr-light: #ffff;
+    --clr-dark: #797878;
+    --clr-accent: #8f1313;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 3.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.5rem;
+    }
+}
+
+html {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: var(--fs-1);
+}
+
+.city-section {
+    height: 50vh;
+}
+
+.city-weather {
+    height: 20vh;
+}
