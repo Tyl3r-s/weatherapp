@@ -9,17 +9,29 @@ html {
 }
 
 body {
+    background-image: url(/assets/images/photo-1566996694954-90b052c413c4.avif);
+    background-size: cover;
     margin: 0;
     min-height: 100vh;
     max-width: 100vw;
     background-color: gray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .top-bar {
     text-align: center;
     font-size: 5vh;
-    background-color: white;
+    color: white;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1) ),
+    linear-gradient(to bottom right, red, yellow);
     margin: 0 1vw 0 1vw;
+    padding: 1vh;
+    box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
 }
 
 .page-content{
@@ -28,27 +40,157 @@ body {
     justify-content: center;
 }
 
-.city-section {
-    margin: 1vw;
-    height: 50vh;
-    width: 20vw;
-}
-
-.city-weather {
-    margin: 1vw;
-    height: 20vh;
-    width: 70vw;
-}
 
 .column {
     background-color: white;
     margin: 2vw;
+    box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+}
+
+.city-section {
+    background-image:
+    linear-gradient( rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1) ),
+    url(/assets/images/photo-1512850183-6d7990f42385.avif);
+    background-size: cover;
+    margin: 1vw;
+    height: 530px;
+    width: 300px;
+}
+
+.city-section h1 {
+    padding: 5% 5% 0 5%;
+}
+
+.search-bar {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.search-button {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(102, 140, 253, 0.363);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: rgba(102, 140, 253, 0.825);
+}
+
+.search-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.city-weather {
+    background-image:
+    linear-gradient( rgba(255, 255, 255, 0.903),
+    rgba(255, 255, 255, 0.726) ),
+    url(/assets/images/photo-1590055531615-f16d36ffe8ec.avif);
+    background-size: cover;
+    margin: 1vw;
+    height: 300px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .forecast {
     display: flex;
-    justify-content: space-between;
-    padding: 1vw;
-    margin: 1vw;
-    height: 20vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1vh;
+    height: 245px;
+    width: 600px;
+}
+
+.forecast-card {
+    background-image: linear-gradient( rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.4) ),
+    linear-gradient(to bottom right, red, yellow);
+    margin: 2vh;
+    width: 150px;
+    height: 200px;
+}
+
+.forecast-card h1{
+    text-align: center;
+}
+
+
+@media (min-width: 1000px) {
+    .city-section {
+        height: 530px;
+        width: 300px;
+    }
+    
+    .city-weather {
+        height: 300px;
+        width: 1000px;
+    }
+
+    .forecast {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 245px;
+        width: 1000px;
+    }
+
+    .forecast-card {
+        margin: 0;
+        width: 170px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .city-section {
+        margin: 1vw;
+        height: 530px;
+        width: 300px;
+    }
+    
+    .city-weather {
+        margin: 1vw;
+        height: 300px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .forecast {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1vh;
+        height: 245px;
+        width: 300px;
+    }
+    
+    .forecast-card {
+        margin: 1vh;
+        width: 200px;
+        height: 200px;
+    }
+    body {
+        background-image: url(/assets/images/photo-1454789476662-53eb23ba5907.avif);
+        background-size: cover;
+        background-repeat: repeat;
+        margin: 0;
+        min-height: 100%;
+        max-width: 100%;
+        background-color: gray;
+    }
 }
