@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* font-weight */
+    --fw-reg: 400;
+    --fw-bold: 900;
+    /* font-size */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    /* background shadow */
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.10),
+          0.125em 0.12em 0.25em rgba(0,0,0,.10);
+    /* colours */
+    --clr-light: #ffff;
+    --clr-dark: #797878;
+    --clr-accent: #8f1313;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.5rem;
+    }
+}
+
+/* landing page style */
+
+/* general */
+
+html {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Candara;
+    margin: 0;
+    min-height: 100vh;
+    background:
+    linear-gradient( rgba(250, 250, 250, 1),
+    rgba(0, 0, 0, 0.3) )
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-reg);
+}
+
+/* header section */
+
+.navbar {
+    box-shadow: var(--bs);
+}
+
+/* landing page style */
+.landing-section {
+    margin-top: 500px;
+}
+
+.landing-text {
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    margin: 5vw 15vw 0 15vw;
+}
+
+.landing-content {
+    margin-top: 50px;
+}
+
+.landing-title {
+    text-align: center;
+}
+
+.landing-info {
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.character-start {
+    width: 100px;
+    height: 50px;
+}
+
+.character-start:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    :root {
+        /* font-weight */
+        --fw-reg: 400;
+        --fw-bold: 900;
+        /* font-size */
+        --fs-h1: 2rem;
+        --fs-h2: 2.25rem;
+        --fs-h3: 1rem;
+        --fs-body: 1rem;
+    }
+    
+    .character-start {
+        width: 80px;
+        height: 40px;
+    }
+    
+    .header-logo {
+        width: 30vw;
+        height: 100%;
+        margin-left: 1em;
+    }
+}
+
+/* races page style */ 
+.race-boxes, .class-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.card-content {
+    height: 100%;
+}
