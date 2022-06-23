@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Document</title>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="assets/script.js"></script>
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
@@ -24,23 +26,27 @@
                 <input type="text" class="search-bar">
                 <button type="submit" class="btn search-button">search</button>
             </form>
-        </section>
-        <!--city search end-->
+        </section> <!--city search end-->
 
+        <!-- Displays forecast of selected city for that day -->
         <section class="weather-forecast">
             <div class="column city-weather">
                 <h1>City</h1>
+                <img src="" alt="" class="icon">
                 <ul>
-                    <li>Temp:</li>
-                    <li>Wind:</li>
-                    <li>Humidity:</li>
-                    <li>UV Index:</li>
+                    <li class="temp">Temp:</li>
+                    <li class="wind">Wind:</li>
+                    <li class="humidity">Humidity:</li>
+                    <li class="UVindex">UV Index:</li>
                 </ul>
             </div>
 
+            <!-- shows forecast for next 5 days -->
             <h1 class="forecast-title">5-Day Forecast</h1>
 
+            <!-- card container -->
             <section class="forecast">
+                <!-- day 1 -->
                 <div class="column forecast-card">
                     <img src="">
                     <h1>Date</h1>
@@ -51,6 +57,7 @@
                         </ul>
                 </div>
 
+                <!-- day 2 -->
                 <div class="column forecast-card">
                     <img src="">
                     <h1>Date</h1>
@@ -60,41 +67,45 @@
                             <Li>Humidity:</Li>
                         </ul>
                 </div>
-                <div class="column forecast-card">
-                    <img src="">
-                    <h1>Date</h1>
-                        <ul>
-                            <li>Temp:</li>
-                            <li>Wind:</li>
-                            <Li>Humidity:</Li>
-                        </ul>
-                </div>
-                <div class="column forecast-card">
-                    <img src="">
-                    <h1>Date</h1>
-                        <ul>
-                            <li>Temp:</li>
-                            <li>Wind:</li>
-                            <Li>Humidity:</Li>
-                        </ul>
-                </div>
-                <div class="column forecast-card">
-                    <img src="">
-                    <h1>Date</h1>
-                        <ul>
-                            <li>Temp:</li>
-                            <li>Wind:</li>
-                            <Li>Humidity:</Li>
-                        </ul>
-                </div>
-            </section>
-        </section>
 
+                <!-- day 3 -->
+                <div class="column forecast-card">
+                    <img src="">
+                    <h1>Date</h1>
+                        <ul>
+                            <li>Temp:</li>
+                            <li>Wind:</li>
+                            <Li>Humidity:</Li>
+                        </ul>
+                </div>
 
-    </div><!--page content end-->
+                <!-- day 4 -->
+                <div class="column forecast-card">
+                    <img src="">
+                    <h1>Date</h1>
+                        <ul>
+                            <li>Temp:</li>
+                            <li>Wind:</li>
+                            <Li>Humidity:</Li>
+                        </ul>
+                </div>
 
-<script src="assets/script.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <!-- day 5 -->
+                <div class="column forecast-card">
+                    <img src="">
+                    <h1>Date</h1>
+                        <ul>
+                            <li>Temp:</li>
+                            <li>Wind:</li>
+                            <Li>Humidity:</Li>
+                        </ul>
+                </div>
+
+            </section> <!-- forecast card container end -->
+
+        </section> <!-- entire forecast containter end-->
+
+    </div> <!--page content end-->
 
 </body>
 
