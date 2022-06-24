@@ -95,13 +95,23 @@ body {
     margin-right: auto;
 }
 
-.city-weather h1 {
-    padding-top: 40px;
-    padding-left: 40px;
+.weather-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4vh;
 }
 
-.city-weather li {
-    margin: 20px;
+.city-weather h1 {
+    padding-top: 25px;
+    padding-left: 35px;
+}
+
+.city-weather p {
+    margin-left: 45px;
+}
+
+.weather-header p {
+    margin-left: 1vh;
 }
 
 .forecast {

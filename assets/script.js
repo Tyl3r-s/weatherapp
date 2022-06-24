@@ -7,42 +7,69 @@
 // get toronto (or any city) lat and lon by searching name
 // http://api.openweathermap.org/geo/1.0/direct?q=Toronto&limit=5&appid=96f33839c85744a54cc32451f4cf28cb
 
-var lat = [];
+// get coords for city search
+// http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=96f33839c85744a54cc32451f4cf28cb
 
-var lon = [];
+var lat = "43.7001";
 
+var lon = "-79.4163";
 
-// handles weather data for current day
+var cityName = "tokyo";
+
+var citySearches = [];
+
+var apiKey = "96f33839c85744a54cc32451f4cf28cb";
+
+var cityNameInput = document.querySelector(".search-bar");
+
+var searchCity = document.querySelector(".search-button");
+
+// searches for coords of city, uses coords to find city's weather data, passes specified data into HTML
 let weather = {
-    apiKey: "96f33839c85744a54cc32451f4cf28cb",
-    fetchWeather: function(lat, lon) {
-        fetch(
-            // finds weather data based on lon and lat input
-            "https://api.openweathermap.org/data/2.5/onecall?units=metric&lat="
+    // find your coords
+    getCityCoords: function () {
+        // finds the lon and lat coords based on city name
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q="
+            + cityName
+            + "&limit=5&appid="
+            + apiKey)
+            // parses data then sets param for fetchWeather
+            .then((response) => response.json())
+            .then((data) => this.fetchWeather(data));
+    },
+
+    // set coord variables and searches for weather
+    fetchWeather: function (data) {
+        const lon = data[0].lon;
+        const lat = data[0].lat;
+        const name = data[0].name;
+        document.querySelector(".city-name").innerText = name;
+        // finds weather data based on lon and lat input
+        fetch("https://api.openweathermap.org/data/2.5/onecall?units=metric&lat="
             + lat
             + "&lon="
             + lon
-            + "&exclude=minutely,hourly,daily&appid=" 
-            + this.apiKey
-            )
-            // takes all that data, parses, and gives to displayWeather
+            + "&exclude=minutely,hourly,daily&appid="
+            + apiKey
+        )
+            // takes all that data, parses, and fires displayWeather with data param
             .then((response) => response.json())
             .then((data) => this.displayWeather(data));
-        },
-        // grabs specified parts of the data just collected and assigns to variable
-        displayWeather: function(data) {
-            const name = data.timezone;
-            const temp = data.current.temp;
-            const wind = data.current.wind_speed;
-            const humidity = data.current.humidity;
-            const UVindex = data.current.uvi;
-            const icon = data.current.weather[0].icon;
-            // puts the correct data on the screen
-            document.querySelector(".city-name").innerText = "Weather in " + name;
-            document.querySelector(".icon").src = "https://openweathermap.org/img/wn/"+icon+".png";
-            document.querySelector(".temp").innerText = "Temperature: "+temp+"°C";            
-            document.querySelector(".wind").innerText = "Wind Speed: "+wind+"m/s";
-            document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
-            document.querySelector(".UVindex").innerText = "UV index: "+UVindex;
-        }
+    },
+    // sets specific weather variables and inserts into html
+    displayWeather: function (data) {
+        const temp = data.current.temp;
+        const wind = data.current.wind_speed;
+        const humidity = data.current.humidity;
+        const UVindex = data.current.uvi;
+        const icon = data.current.weather[0].icon;
+        const description = data.current.weather[0].main;
+        // puts the correct data on the screen
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".description").innerText = description;
+        document.querySelector(".temp").innerText = "Temperature: " + temp + "°C";
+        document.querySelector(".wind").innerText = "Wind Speed: " + wind + "m/s";
+        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+        document.querySelector(".UVindex").innerText = "UV index: " + UVindex;
+    }
 }
