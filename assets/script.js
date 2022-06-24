@@ -10,11 +10,7 @@
 // get coords for city search
 // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=96f33839c85744a54cc32451f4cf28cb
 
-var lat = "43.7001";
-
-var lon = "-79.4163";
-
-var cityName = "tokyo";
+var cityName = "toronto";
 
 var citySearches = [];
 
@@ -24,10 +20,11 @@ var cityNameInput = document.querySelector(".search-bar");
 
 var searchCity = document.querySelector(".search-button");
 
+
 // searches for coords of city, uses coords to find city's weather data, passes specified data into HTML
 let weather = {
     // find your coords
-    getCityCoords: function () {
+    fetchCoords: function () {
         // finds the lon and lat coords based on city name
         fetch("http://api.openweathermap.org/geo/1.0/direct?q="
             + cityName
@@ -42,7 +39,7 @@ let weather = {
     fetchWeather: function (data) {
         const lon = data[0].lon;
         const lat = data[0].lat;
-        const name = data[0].name;
+        const name = data[0].name+", "+data[0].state;
         document.querySelector(".city-name").innerText = name;
         // finds weather data based on lon and lat input
         fetch("https://api.openweathermap.org/data/2.5/onecall?units=metric&lat="
@@ -73,3 +70,5 @@ let weather = {
         document.querySelector(".UVindex").innerText = "UV index: " + UVindex;
     }
 }
+
+weather.fetchCoords();
