@@ -1,16 +1,4 @@
-// toronto weather using city search (does not give UV index)
-// https://api.openweathermap.org/data/2.5/weather?q=toronto&appid=96f33839c85744a54cc32451f4cf28cb 
-
-// toronto weather searching with lat and lon (gives UV index)
-// https://api.openweathermap.org/data/2.5/onecall?lat=43.7001&lon=-79.4163&exclude=minutely,hourly,daily&appid=96f33839c85744a54cc32451f4cf28cb
-
-// get toronto (or any city) lat and lon by searching name
-// http://api.openweathermap.org/geo/1.0/direct?q=Toronto&limit=5&appid=96f33839c85744a54cc32451f4cf28cb
-
-// get coords for city search
-// http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=96f33839c85744a54cc32451f4cf28cb
-
-var cityName = "toronto";
+var cityName = [];
 
 var citySearches = [];
 
@@ -19,7 +7,6 @@ var apiKey = "96f33839c85744a54cc32451f4cf28cb";
 var cityNameInput = document.querySelector(".search-bar");
 
 var searchCity = document.querySelector(".search-button");
-
 
 // searches for coords of city, uses coords to find city's weather data, passes specified data into HTML
 let weather = {
@@ -69,6 +56,16 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".UVindex").innerText = "UV index: " + UVindex;
     }
-}
+    // search: function() {
+    //     this.fetchCoords(document.querySelector(".search-bar").value);
+    // }
+};
 
-weather.fetchCoords();
+searchCity.onclick = function() {
+
+    cityName = cityNameInput.value 
+
+    console.log(cityName);
+    
+    weather.fetchCoords();
+}
