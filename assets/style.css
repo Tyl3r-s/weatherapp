@@ -12,7 +12,9 @@ body {
     margin: 0;
     min-height: 100vh;
     max-width: 100vw;
-    background-color: white;
+    background:
+    linear-gradient( rgba(250, 250, 250, 1),
+    rgba(0, 0, 0, 0.3) );
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -25,10 +27,7 @@ body {
     linear-gradient(to bottom right, red, yellow);
     margin: 0 auto 0 auto;
     padding: 1vh;
-    box-shadow: 
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 0 0 5px 5px;
     width: 80vw;
 }
@@ -39,14 +38,17 @@ body {
     justify-content: center;
 }
 
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
 
 .column {
     background-color: rgba(255, 255, 255, 0.529);
     margin: 2vw;
-    box-shadow: 
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 5px;
 }
 
@@ -75,7 +77,6 @@ body {
     font-size: 20px;
     border-radius: 5px;
     background-color: rgba(73, 73, 123, 0.5);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .search-button:hover {
@@ -88,11 +89,40 @@ body {
 }
 
 .city-weather {
-    margin: 1vw;
+    margin-top: 20px;
     height: 300px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.UVindex1 {
+    background-color: rgba(0, 255, 8, 0.489);
+    width: 125px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.UVindex2 {
+    background-color: rgba(255, 225, 0, 0.489);
+    width: 125px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.UVindex3 {
+    background-color: rgba(255, 0, 0, 0.489);
+    width: 125px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.city-title {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .weather-header {
@@ -101,8 +131,13 @@ body {
     margin-left: 4vh;
 }
 
-.city-weather h1 {
-    padding-top: 25px;
+.city-weather h2 {
+    padding-top: 5px;
+    padding-left: 35px;
+}
+
+.city-weather h4 {
+    padding-top: 10px;
     padding-left: 35px;
 }
 
@@ -129,7 +164,7 @@ body {
     width: 150px;
     height: 200px;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .forecast-card img {

@@ -23,15 +23,12 @@ let weather = {
     },
     // set coord variables and searches for weather
     fetchWeather: function (data) {
-        const lon = data[0].lon;
-        const lat = data[0].lat;
-        const name = data[0].name+", "+data[0].state;
-        document.querySelector(".city-name").innerText = name;
+        document.querySelector(".city-name").innerText = data[0].name+", "+data[0].state;
         // finds weather data based on lon and lat input
         fetch("https://api.openweathermap.org/data/2.5/onecall?units=metric&lat="
-            + lat
+            + data[0].lat
             + "&lon="
-            + lon
+            + data[0].lon
             + "&exclude=minutely,hourly&appid="
             + apiKey
         )
@@ -42,6 +39,7 @@ let weather = {
     // sets specific weather variables and inserts into html
     displayWeather: function (data) {
         // puts the correct data on the screen
+        document.querySelector(".current-date").innerText = data.current.dt;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" +data.current.weather[0].icon+ ".png";
         document.querySelector(".description").innerText = data.current.weather[0].main;
         document.querySelector(".temp").innerText = "Temperature: " +data.current.temp+ "°C";
@@ -58,9 +56,9 @@ let weather = {
                 var forecastCardEl = $("<div>").addClass("column forecast-card");
                 var dailyDateEl = $("<h5>").text(data.daily[i].dt);
                 var dailyIconEl = $("<img>").attr("src","https://openweathermap.org/img/wn/"+data.daily[i].weather[0].icon+".png");
-                var dailyTempEl = $("<h6>").text("temp: "+data.daily[i].temp.day);
-                var dailyHumidityEl = $("<h6>").text("humidity: "+data.daily[i].humidity);
-                var dailyWindEl = $("<h6>").text("wind: "+data.daily[i].wind_speed);
+                var dailyTempEl = $("<h6>").text("temp: "+data.daily[i].temp.day+"°C");
+                var dailyHumidityEl = $("<h6>").text("humidity: "+data.daily[i].humidity+"%");
+                var dailyWindEl = $("<h6>").text("wind: "+data.daily[i].wind_speed+"m/s");
                 forecastCardEl.append(dailyDateEl, dailyIconEl, dailyTempEl, dailyHumidityEl, dailyWindEl);
                 forecastEl.append(forecastCardEl);
             }  
@@ -71,5 +69,25 @@ let weather = {
 
 searchCityEl.onclick = function() {
     cityName = cityNameInputEl.value 
-    weather.fetchCoords();
+    saveCitySearch();
 }
+
+var saveCitySearch = function() {
+    cityName = JSON.parse(localStorage.getItem('citySearch'));
+    if (cityName && cityNameInputEl.value !== "") {
+        cityName = cityName + "," + cityNameInputEl.value
+        localStorage.setItem('citySearch', JSON.stringify(cityName));
+    } else if (cityNameInputEl.value !== ""){
+        cityName =cityNameInputEl.value
+        localStorage.setItem('citySearch', JSON.stringify(cityName));
+    }
+    if (cityNameInputEl.value == "") {
+        alert("please enter valid city name, or please check spelling")
+        return;
+    } else {
+    cityName = []
+    cityName = cityNameInputEl.value 
+    weather.fetchCoords();
+    }
+}
+
