@@ -132,8 +132,16 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 
-.forecast-card h1{
+.forecast-card img {
+    margin-left: 60px;
+} 
+
+
+.forecast-card h6, h5{
+    display: flex;
+    justify-content: center;
     text-align: center;
+    margin: 15px;
 }
 
 .forecast-title {

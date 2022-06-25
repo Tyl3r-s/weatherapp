@@ -4,9 +4,9 @@ var citySearches = [];
 
 var apiKey = "96f33839c85744a54cc32451f4cf28cb";
 
-var cityNameInput = document.querySelector(".search-bar");
+var cityNameInputEl = document.querySelector(".search-bar");
 
-var searchCity = document.querySelector(".search-button");
+var searchCityEl = document.querySelector(".search-button");
 
 // searches for coords of city, uses coords to find city's weather data, passes specified data into HTML
 let weather = {
@@ -21,7 +21,6 @@ let weather = {
             .then((response) => response.json())
             .then((data) => this.fetchWeather(data));
     },
-
     // set coord variables and searches for weather
     fetchWeather: function (data) {
         const lon = data[0].lon;
@@ -33,7 +32,7 @@ let weather = {
             + lat
             + "&lon="
             + lon
-            + "&exclude=minutely,hourly,daily&appid="
+            + "&exclude=minutely,hourly&appid="
             + apiKey
         )
             // takes all that data, parses, and fires displayWeather with data param
@@ -42,30 +41,35 @@ let weather = {
     },
     // sets specific weather variables and inserts into html
     displayWeather: function (data) {
-        const temp = data.current.temp;
-        const wind = data.current.wind_speed;
-        const humidity = data.current.humidity;
-        const UVindex = data.current.uvi;
-        const icon = data.current.weather[0].icon;
-        const description = data.current.weather[0].main;
         // puts the correct data on the screen
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = "Temperature: " + temp + "°C";
-        document.querySelector(".wind").innerText = "Wind Speed: " + wind + "m/s";
-        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".UVindex").innerText = "UV index: " + UVindex;
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" +data.current.weather[0].icon+ ".png";
+        document.querySelector(".description").innerText = data.current.weather[0].main;
+        document.querySelector(".temp").innerText = "Temperature: " +data.current.temp+ "°C";
+        document.querySelector(".wind").innerText = "Wind Speed: " +data.current.wind_speed+ "m/s";
+        document.querySelector(".humidity").innerText = "Humidity: " +data.current.humidity+ "%";
+        document.querySelector(".UVindex").innerText = "UV index: " +data.current.uvi;
+            //create the 5 forecast cards
+            var forecastCards = function() {
+                var day = data.daily
+                forecastEl = $(".forecast");
+                forecastEl.empty();
+            // loop creates 5 cards with 5 day forecast
+            for (var i = 1; i < 6; i++) {
+                var forecastCardEl = $("<div>").addClass("column forecast-card");
+                var dailyDateEl = $("<h5>").text(data.daily[i].dt);
+                var dailyIconEl = $("<img>").attr("src","https://openweathermap.org/img/wn/"+data.daily[i].weather[0].icon+".png");
+                var dailyTempEl = $("<h6>").text("temp: "+data.daily[i].temp.day);
+                var dailyHumidityEl = $("<h6>").text("humidity: "+data.daily[i].humidity);
+                var dailyWindEl = $("<h6>").text("wind: "+data.daily[i].wind_speed);
+                forecastCardEl.append(dailyDateEl, dailyIconEl, dailyTempEl, dailyHumidityEl, dailyWindEl);
+                forecastEl.append(forecastCardEl);
+            }  
+        }
+    forecastCards();
     }
-    // search: function() {
-    //     this.fetchCoords(document.querySelector(".search-bar").value);
-    // }
-};
+}; //weather end
 
-searchCity.onclick = function() {
-
-    cityName = cityNameInput.value 
-
-    console.log(cityName);
-    
+searchCityEl.onclick = function() {
+    cityName = cityNameInputEl.value 
     weather.fetchCoords();
 }
