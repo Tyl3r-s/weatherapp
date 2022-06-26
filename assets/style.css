@@ -76,15 +76,51 @@ body {
     height: 35px;
     font-size: 20px;
     border-radius: 5px;
-    background-color: rgba(70, 70, 103, 0.359);
+    background-color: rgba(25, 167, 75, 0.359);
 }
 
 .search-button:hover {
     cursor: pointer;
-    background-color: rgba(70, 70, 103, 0.6);
+    background-color: rgba(25, 167, 75, 0.6);
 }
 
 .search-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.delete-button {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(138, 38, 80, 0.579);
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    background-color: rgba(138, 38, 80, 0.9);
+}
+
+.delete-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.history-button {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(78, 38, 138, 0.579);
+}
+
+.history-button:hover {
+    cursor: pointer;
+    background-color: rgba(78, 38, 138, 0.9);
+}
+
+.history-button:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 

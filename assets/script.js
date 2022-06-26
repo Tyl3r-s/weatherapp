@@ -1,15 +1,13 @@
-var cityName = [];
-var saveCitySearch = [];
 var apiKey = "96f33839c85744a54cc32451f4cf28cb";
-var cityNameInputEl = document.querySelector(".search-bar");
-var searchCityEl = document.querySelector(".search-button");
-
+var previousCities = {city: []}
+var searchHistory = JSON.parse(localStorage.getItem('cities'));
+var searchHistoryEl = $('.historySection');
 // searches for coords of city, uses coords to find city's weather data, passes specified data into HTML
 let weather = {
     // find your coords
-    fetchCoords: function () {
+    fetchCoords: function (city) {
         // finds the lon and lat coords based on city name
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q="+cityName+"&limit=5&appid="+apiKey)
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q="+city+"&limit=5&appid="+apiKey)
             // parses data then sets param for fetchWeather
             .then((response) => response.json())
             .then((data) => this.fetchWeather(data));
@@ -17,6 +15,8 @@ let weather = {
     // set coord variables and searches for weather
     fetchWeather: function (data) {
         document.querySelector(".city-name").innerText = data[0].name+", "+data[0].state;
+        var prevCity = $('<p>').addClass("btn history-button").text(data[0].name);
+        searchHistoryEl.append(prevCity);
         // finds weather data based on lon and lat input
         fetch("https://api.openweathermap.org/data/2.5/onecall?units=metric&lat="
         +data[0].lat+"&lon="+data[0].lon+"&exclude=minutely,hourly&appid="+apiKey)
@@ -28,13 +28,13 @@ let weather = {
     displayWeather: function (data) {
         var date = new Date(data.current.dt * 1000).toLocaleString();
         // puts the correct data on the screen
-        document.querySelector(".current-date").innerText = date;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" +data.current.weather[0].icon+ ".png";
-        document.querySelector(".description").innerText = data.current.weather[0].main;
-        document.querySelector(".temp").innerText = "Temperature: " +data.current.temp+ "°C";
-        document.querySelector(".wind").innerText = "Wind Speed: " +data.current.wind_speed+ "m/s";
-        document.querySelector(".humidity").innerText = "Humidity: " +data.current.humidity+ "%";
-        document.querySelector(".UVindex").innerText = "UV index: " +data.current.uvi;
+        $(".current-date").text(date);
+        $(".icon").attr('src', "https://openweathermap.org/img/wn/" +data.current.weather[0].icon+ ".png");
+        $(".description").innerText = data.current.weather[0].main;
+        $(".temp").text("Temperature: " +data.current.temp+ "°C");
+        $(".wind").text("Wind Speed: " +data.current.wind_speed+ "m/s");
+        $(".humidity").text("Humidity: " +data.current.humidity+ "%");
+        $(".UVindex").text("UV index: " +data.current.uvi);
         if (data.current.uvi < "4") {
             $(".UVindex").removeClass("UVindexModerate UVindexHigh").addClass("UVindexLight")
         } if (data.current.uvi > "3") {
@@ -63,10 +63,28 @@ let weather = {
     }
 }; //weather end
 
-searchCityEl.onclick = function() {
-    cityName = cityNameInputEl.value 
-    weather.fetchCoords();
-    saveCitySearches();
+$('.search-button').click(() => {
+    const city = $('.search-bar').val().trim();
+    previousCities.city = city;
+    
+    savedCities = JSON.parse(localStorage.getItem('cities'));
+    if (!savedCities) {
+        savedCities = [];
+    }
+    savedCities.push(previousCities);
+    localStorage.setItem('cities', JSON.stringify(savedCities));
+    weather.fetchCoords(city);
+})
+
+for(var i = 0; i < searchHistory.length; i++) {
+    var prevCity = $('<p>').addClass("btn history-button").text(searchHistory[i].city);
+    searchHistoryEl.append(prevCity);
 }
+
+$('.delete-button').click(() => {
+    console.log("clicked")
+    localStorage.clear();
+    location.reload();
+})
 
 
