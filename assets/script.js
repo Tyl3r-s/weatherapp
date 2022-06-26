@@ -16,7 +16,7 @@ let weather = {
     // find your coords
     fetchCoords: function (city) {
         // finds the lon and lat coords based on city name
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + apiKey)
+        fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + apiKey)
             // parses data then sets param for fetchWeather
             .then((response) => response.json())
             .then((data) => this.fetchWeather(data));
