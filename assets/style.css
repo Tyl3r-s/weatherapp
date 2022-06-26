@@ -18,6 +18,7 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* A whole bunch of details for just the top bar... */
 .top-bar {
     text-align: center;
     font-size: 5vh;
@@ -32,12 +33,14 @@ body {
     width: 80vw;
 }
 
+/* this would be... the page.. content...... */
 .page-content{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* a button. wow */
 .btn {
     display: flex;
     justify-content: center;
@@ -45,6 +48,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+/* general style for all the weather boxes, besides the 5 day forecast, they are special with their own style. */
 .column {
     background-color: rgba(134, 134, 173, 0.368);
     margin: 2vw;
@@ -52,6 +56,7 @@ body {
     border-radius: 5px;
 }
 
+/* city search & history section */
 .city-section {
     margin: 1vw;
     height: 530px;
@@ -124,6 +129,7 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
+/* box displaying current weather */
 .city-weather {
     margin-top: 20px;
     height: 300px;
@@ -185,6 +191,7 @@ body {
     margin-left: 1vh;
 }
 
+/* the 5 forecast boxes */
 .forecast {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +226,9 @@ body {
     margin-left: 15px;
 }
 
+/* responsive desiiiiiignnnn  */
 
+/* when screen big */
 @media (min-width: 1000px) {
     .city-section {
         height: 580px;
@@ -246,6 +255,7 @@ body {
     }
 }
 
+/* when screen smol */
 @media (max-width: 500px) {
     .city-section {
         margin: 1vw;
