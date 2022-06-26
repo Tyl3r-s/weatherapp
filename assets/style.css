@@ -46,7 +46,7 @@ body {
 }
 
 .column {
-    background-color: rgba(255, 255, 255, 0.529);
+    background-color: rgba(134, 134, 173, 0.368);
     margin: 2vw;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 5px;
@@ -76,12 +76,12 @@ body {
     height: 35px;
     font-size: 20px;
     border-radius: 5px;
-    background-color: rgba(73, 73, 123, 0.5);
+    background-color: rgba(70, 70, 103, 0.359);
 }
 
 .search-button:hover {
     cursor: pointer;
-    background-color: rgba(73, 73, 123, 0.8);
+    background-color: rgba(70, 70, 103, 0.6);
 }
 
 .search-button:active {
@@ -96,25 +96,25 @@ body {
     margin-right: auto;
 }
 
-.UVindex1 {
+.UVindexLight {
     background-color: rgba(0, 255, 8, 0.489);
-    width: 125px;
+    width: 140px;
     height: 25px;
     padding: 4px;
     border-radius: 5px;
 }
 
-.UVindex2 {
+.UVindexModerate {
     background-color: rgba(255, 225, 0, 0.489);
-    width: 125px;
+    width: 140px;
     height: 25px;
     padding: 4px;
     border-radius: 5px;
 }
 
-.UVindex3 {
+.UVindexHigh {
     background-color: rgba(255, 0, 0, 0.489);
-    width: 125px;
+    width: 140px;
     height: 25px;
     padding: 4px;
     border-radius: 5px;
@@ -159,7 +159,7 @@ body {
 
 .forecast-card {
     color: white;
-    background-color: rgba(70, 70, 103, 0.768);
+    background-color: rgba(70, 70, 103, 0.599);
     margin: 2vh;
     width: 150px;
     height: 200px;
