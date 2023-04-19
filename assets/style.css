@@ -57,7 +57,7 @@ body {
 }
 
 .search-button {
-    width: 35px;
+    width: 90%;
     margin: 0 5% 10px 5%;
     height: 35px;
     font-size: 20px;
@@ -65,9 +65,7 @@ body {
     background-color: rgba(25, 167, 75, 0.359);
 }
 
-.searchIcon {
-    height: 25px;
-}
+
 
 .search-button:hover {
     cursor: pointer;
