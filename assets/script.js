@@ -57,7 +57,7 @@ let weather = {
             for (var i = 1; i < 6; i++) {
                 // converts unix timestamp to date we can read 
                 var date = new Date(data.daily[i].dt * 1000).toLocaleDateString();
-                // yeets cards into existence
+                // fill in forecast cards
                 var forecastCardEl = $("<div>").addClass("column forecast-card");
                 var dailyDateEl = $("<h5>").text(date);
                 var dailyIconEl = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + ".png");
@@ -72,7 +72,7 @@ let weather = {
     }
 }; //weather end
 
-// really classy name for passing input from search-bar or history section to fetchCoords()
+// pass input from search-bar or history section to fetchCoords()
 var searchDemCities = function (event) {
     // sends search-bar value to fetchCoords, checks for search history, makes new button for city searched
     if (event.target.matches('.search-button')) {
@@ -91,12 +91,12 @@ var searchDemCities = function (event) {
             searchHistoryEl.append(prevCity);
         }
     }
-    // don't feel like searching? click yo history to see it again
+    // click city from history to search
     if (event.target.matches('.history-button')) {
         console.log(event.target.innerHTML)
         weather.fetchCoords(event.target.innerHTML);
     }
-    // yeets history from existence 
+    // delete history 
     if (event.target.matches('.delete-button')) {
         console.log("clicked")
         localStorage.clear();
@@ -105,5 +105,5 @@ var searchDemCities = function (event) {
     }
 }
 
-// search. dem. cities.                    dawg.
+// search cities
 $(".city-search").click(searchDemCities);
