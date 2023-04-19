@@ -15,21 +15,25 @@
 
     <div class="page-content">
         <!-- city search & history section -->
-        <section class="city-search">
+        <!-- <section class="city-search">
             <form class="city-section column">
-                <h1>Search for a City:</h1>
                 <input type="text" class="search-bar">
-                <p class="btn search-button">Search</p>
+                <button class="btn search-button">Search</button>
                 <h1>Search History:</h1>
                 <p class="btn delete-button">Delete History</p>
                 <div class="historySection">
-                <!-- previous searches here -->
+                    
                 </div>
             </form>
-        </section> <!--city search end-->
+        </section>  -->
+        <!--city search end-->
 
         <!-- Displays forecast of selected city for that day -->
         <section class="weather-forecast">
+            <form class="city-section">
+                <input type="text" class="search-bar">
+                <button class="btn search-button">Search</button>
+            </form>
             <div class="column city-weather">
                 <div class="city-title">
                     <h2 class="city-name">City</h2>
@@ -39,66 +43,65 @@
                     <img src="" alt="" class="icon">
                     <p class="description"></p>
                 </div>
-                    <p class="temp">Temp:</p>
-                    <p class="wind">Wind:</p>
-                    <p class="humidity">Humidity:</p>
-                    <p class="UVindex">UV Index:</p>
-                    <div class="UVcolor"></div>
+                <p class="temp">Temp:</p>
+                <p class="wind">Wind:</p>
+                <p class="humidity">Humidity:</p>
+                <p class="UVindex">UV Index:</p>
+                <div class="UVcolor"></div>
             </div>
 
-            <!-- shows forecast for next 5 days -->
-            <h1 class="forecast-title">5-Day Forecast</h1>
+        </section>
 
-            <!-- card container -->
-            <div class="forecast">
-                <!-- day 1 -->
-                <div class="column forecast-card">
-                    <h5>Date</h5>
-                    <img src="">
-                    <h6>temp</h6>
-                    <h6>humidity</h6>
-                    <h6>wind</h6>
-                </div>
+        <!-- shows forecast for next 5 days -->
 
-                <!-- day 2 -->
-                <div class="column forecast-card">
-                    <h5>Date</h5>
-                    <img src="">
-                    <h6>temp</h6>
-                    <h6>humidity</h6>
-                    <h6>wind</h6>
-                </div>
+        <!-- card container -->
+        <section class="forecast">
+            <!-- day 1 -->
+            <div class="column forecast-card">
+                <h5 id="forecastText">Date</h5>
+                <img id="forecastText" src="">
+                <h6 id="forecastText">temp</h6>
+                <h6 id="forecastText">humidity</h6>
+                <h6 id="forecastText">wind</h6>
+            </div>
 
-                <!-- day 3 -->
-                <div class="column forecast-card">
-                    <h5>Date</h5>
-                    <img src="">
-                    <h6>temp</h6>
-                    <h6>humidity</h6>
-                    <h6>wind</h6>
-                </div>
+            <!-- day 2 -->
+            <div class="column forecast-card">
+                <h5 id="forecastText">Date</h5>
+                <img id="forecastText" src="">
+                <h6 id="forecastText">temp</h6>
+                <h6 id="forecastText">humidity</h6>
+                <h6 id="forecastText">wind</h6>
+            </div>
 
-                <!-- day 4 -->
-                <div class="column forecast-card">
-                    <h5>Date</h5>
-                    <img src="">
-                    <h6>temp</h6>
-                    <h6>humidity</h6>
-                    <h6>wind</h6>
-                </div>
+            <!-- day 3 -->
+            <div class="column forecast-card">
+                <h5 id="forecastText">Date</h5>
+                <img id="forecastText" src="">
+                <h6 id="forecastText">temp</h6>
+                <h6 id="forecastText">humidity</h6>
+                <h6 id="forecastText">wind</h6>
+            </div>
 
-                <!-- day 5 -->
-                <div class="column forecast-card">
-                    <h5>Date</h5>
-                    <img src="">
-                    <h6>temp</h6>
-                    <h6>humidity</h6>
-                    <h6>wind</h6>
-                </div>
+            <!-- day 4 -->
+            <div class="column forecast-card">
+                <h5 id="forecastText">Date</h5>
+                <img id="forecastText" src="">
+                <h6 id="forecastText">temp</h6>
+                <h6 id="forecastText">humidity</h6>
+                <h6 id="forecastText">wind</h6>
+            </div>
 
-            </div> <!-- forecast card container end -->
+            <!-- day 5 -->
+            <div class="column forecast-card">
+                <h5 id="forecastText">Date</h5>
+                <img id="forecastText" src="">
+                <h6 id="forecastText">temp</h6>
+                <h6 id="forecastText">humidity</h6>
+                <h6 id="forecastText">wind</h6>
+            </div>
 
-        </section> <!-- entire forecast containter end-->
+        </section> <!-- forecast card container end -->
 
     </div> <!--page content end-->
 
