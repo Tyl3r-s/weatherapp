@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <script defer src="https://moment.github.io/luxon/global/luxon.js"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="assets/script.js"></script>
     <title>Weather Dashboard</title>
@@ -34,8 +35,8 @@
             <div class="column city-weather">
                 <div class="city-search">
                     <form id="city-section">
-                        <input type="text" class="search-bar">
-                        <button class="btn" id="search-button"><svg stroke="currentColor" fill="currentColor"
+                        <input list="city-options" type="text" class="search-bar" id="city">
+                        <button class="btn search-button" id="search-button"><svg stroke="currentColor" fill="currentColor"
                                 stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -49,14 +50,14 @@
                     <h4 id="current-date"></h4>
                 </div>
                 <div class="weather-header">
-                    <img src="" alt="" id="icon">
+                    <img src="" alt="" id="current-icon">
                     <p id="description"></p>
                 </div>
                 <div class="stats">
-                    <h1 class="temp">12°</h1>
-                    <p class="wind">Wind:</p>
-                    <p class="humidity">Humidity:</p>
-                    <p class="UVindex">UV Index:</p>
+                    <h1 id="temp">12°</h1>
+                    <p id="wind">Wind:</p>
+                    <p id="humidity">Humidity:</p>
+                    <!-- <p id="UVindex">UV Index:</p> -->
                     <div class="UVcolor"></div>
                 </div>
             </div>
