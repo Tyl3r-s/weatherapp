@@ -18,15 +18,15 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .page-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 45vw;
-    height: 50vh;
+    width: 90vw;
+    height: 80vh;
 }
 
 .btn {
@@ -37,15 +37,27 @@ body {
 
 .search-bar {
     border-radius: 5px;
-    width: 10vw;
+    width: 20vw;
     border: none;
     margin: 10px;
-    height: 1.5em;
+    height: 25px;
+}
+
+#search-button svg{
+    margin-top: 4px;
 }
 
 .column {
     background-color: rgba(0, 0, 0, 0.352);
-    border-radius: 25px;
+}
+
+.dayOne {
+    border-radius: 0 25px 0 0;
+    top: 0;
+}
+
+.dayFive {
+    border-radius: 0 0 25px 0;
 }
 
 #city-section {
@@ -53,20 +65,57 @@ body {
     justify-content: center;
 }
 
-.weather-forecast {
-    width: 50vw;
+.stats {
+    font-size: 3vh;
+    display: grid;
+    grid-row-gap: 1.5vh;
+    margin-left: 10vh;
+    padding-bottom: 10px;
+}
+
+#city-name {
+    margin: 10vh 10vh 0 10vh;
+}
+
+.city-weather {
+    height: 80vh;
+    width: 40vw;
+    border-radius: 25px 0 0 25px;
 }
 
 .forecast {
-    display: flex;
+    display: grid;
+    grid-row-gap: 1.2vh;
+    width: 20%;
+    height: 80vh;
 }
 
 .forecast-card {
-    width: 130px;
-    height: 130px;
-    margin: 10px;
+    width: 7vw;
+    height: 15vh;
+    margin-left: 1.2vh;
 }
 
 #forecastText {
-    margin: 5px;
+    font-size: 1.4vh;
+    font-weight: bold;
+    margin: 8px 0 0.01vh 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .city-weather {
+        width: 60vw;
+    }
+
+    .forecast-card {
+        width: 25vw;
+    }
+
+    #city-name {
+        margin-left: 3vw;
+    }
+
+    .stats {
+        margin-left: 3vw;
+    }
 }

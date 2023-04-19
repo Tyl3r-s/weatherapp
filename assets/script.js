@@ -59,11 +59,11 @@ let weather = {
                 var date = new Date(data.daily[i].dt * 1000).toLocaleDateString();
                 // fill in forecast cards
                 var forecastCardEl = $("<div>").addClass("column forecast-card");
-                var dailyDateEl = $("<h5>").text(date);
+                var dailyDateEl = $("<p>").text(date);
                 var dailyIconEl = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + ".png");
-                var dailyTempEl = $("<h6>").text("temp: " + data.daily[i].temp.day + "°C");
-                var dailyHumidityEl = $("<h6>").text("humidity: " + data.daily[i].humidity + "%");
-                var dailyWindEl = $("<h6>").text("wind: " + data.daily[i].wind_speed + "m/s");
+                var dailyTempEl = $("<p>").text("temp: " + data.daily[i].temp.day + "°C");
+                var dailyHumidityEl = $("<p>").text("humidity: " + data.daily[i].humidity + "%");
+                var dailyWindEl = $("<p>").text("wind: " + data.daily[i].wind_speed + "m/s");
                 forecastCardEl.append(dailyDateEl, dailyIconEl, dailyTempEl, dailyHumidityEl, dailyWindEl);
                 forecastEl.append(forecastCardEl);
             }
@@ -73,9 +73,9 @@ let weather = {
 }; //weather end
 
 // pass input from search-bar or history section to fetchCoords()
-var searchDemCities = function (event) {
+var searchCities = function (event) {
     // sends search-bar value to fetchCoords, checks for search history, makes new button for city searched
-    if (event.target.matches('.searchIcon')) {
+    if (event.target.matches('.btn')) {
         console.log('clicked')
         if ($('.search-bar').val() !== "") {
             const city = $('.search-bar').val().trim();
@@ -93,18 +93,21 @@ var searchDemCities = function (event) {
         }
     }
     // click city from history to search
-    if (event.target.matches('.history-button')) {
-        console.log(event.target.innerHTML)
-        weather.fetchCoords(event.target.innerHTML);
-    }
+    // if (event.target.matches('.history-button')) {
+    //     console.log(event.target.innerHTML)
+    //     weather.fetchCoords(event.target.innerHTML);
+    // }
     // delete history 
-    if (event.target.matches('.delete-button')) {
-        console.log("clicked")
-        localStorage.clear();
-        searchHistoryEl.remove('.history-button');
-        location.reload();
-    }
+    // if (event.target.matches('.delete-button')) {
+    //     console.log("clicked")
+    //     localStorage.clear();
+    //     searchHistoryEl.remove('.history-button');
+    //     location.reload();
+    // }
 }
 
 // search cities
 $(".city-search").click(searchDemCities);
+
+// const el = document.querySelectorAll("city-search");
+// document.addEventListener("click", searchDemCities);
