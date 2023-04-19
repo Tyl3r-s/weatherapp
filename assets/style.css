@@ -12,47 +12,28 @@ body {
     margin: 0;
     min-height: 100vh;
     max-width: 100vw;
-    background:
-    linear-gradient( rgba(250, 250, 250, 1),
-    rgba(0, 0, 0, 0.3) );
+    background-image: url('../assets/images//day.jpg');
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* A whole bunch of details for just the top bar... */
-.top-bar {
-    text-align: center;
-    font-size: 5vh;
-    color: white;
-    background-image: linear-gradient( rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.1) ),
-    linear-gradient(to bottom right, red, yellow);
-    margin: 0 auto 0 auto;
-    padding: 1vh;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    border-radius: 0 0 5px 5px;
-    width: 80vw;
-}
-
-/* this would be... the page.. content...... */
 .page-content{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-/* a button. wow */
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 
 /* general style for all the weather boxes, besides the 5 day forecast, they are special with their own style. */
 .column {
-    background-color: rgba(134, 134, 173, 0.368);
+    background-color: rgba(166, 166, 168, 0.368);
     margin: 2vw;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
     border-radius: 5px;
 }
 
@@ -72,7 +53,7 @@ body {
     margin: 0 5% 10px 5%;
     height: 35px;
     border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 .search-button {
@@ -207,7 +188,7 @@ body {
     width: 150px;
     height: 200px;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
 }
 
 .forecast-card img {
