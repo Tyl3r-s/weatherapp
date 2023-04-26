@@ -1,0 +1,38 @@
+:root {
+    --columnbg: rgba(0, 0, 0, 0.288);
+    --white: #ffffff;
+    --radius: 5px;
+  }
+  
+  * {
+      box-sizing: border-box;
+  }
+  
+  
+  html {
+      margin: 0;
+      min-height: 100%;
+  }
+  
+  body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      background-image: url('../images/day.jpg');
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .page-content{
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }

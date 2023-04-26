@@ -1,0 +1,76 @@
+/* city search & history section */
+
+.city-search {
+    width: 20vw;
+    height: 80vh;
+    background-color: var(--columnbg);
+}
+.city-section {
+    color: var(--white);
+}
+
+.city-section h1 {
+    padding: 5% 5% 0 5%;
+}
+
+.search-bar {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    border-radius: 5px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+
+.search-button {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: var(--columnbg);
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: rgba(25, 167, 75, 0.6);
+}
+
+.search-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.delete-button {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(138, 38, 80, 0.579);
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    background-color: rgba(138, 38, 80, 0.9);
+}
+
+.delete-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.history-button {
+    width: 90%;
+    margin: 0 5% 10px 5%;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(78, 38, 138, 0.579);
+}
+
+.history-button:hover {
+    cursor: pointer;
+    background-color: rgba(78, 38, 138, 0.9);
+}
+
+.history-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}

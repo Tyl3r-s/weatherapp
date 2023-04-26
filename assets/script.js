@@ -33,12 +33,12 @@ let weather = {
     },
     // uses data param to find specific endpoints, displays all data to screen including 5 day forecast
     displayWeather: function (data) {
-        var date = new Date(data.current.dt * 1000).toLocaleString();
+        var date = new Date(data.current.dt * 1000).toLocaleDateString();
         // puts the correct data on the screen
         $(".current-date").text(date);
         $(".icon").attr('src', "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png");
         $(".description").text(data.current.weather[0].main);
-        $(".temp").text("Temperature: " + data.current.temp + "°C");
+        $(".temp").text(data.current.temp + "°C");
         $(".wind").text("Wind Speed: " + data.current.wind_speed + "m/s");
         $(".humidity").text("Humidity: " + data.current.humidity + "%");
         $(".UVindex").text("UV index: " + data.current.uvi);
@@ -61,9 +61,9 @@ let weather = {
                 var forecastCardEl = $("<div>").addClass("column forecast-card");
                 var dailyDateEl = $("<h5>").text(date);
                 var dailyIconEl = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + ".png");
-                var dailyTempEl = $("<h6>").text("temp: " + data.daily[i].temp.day + "°C");
-                var dailyHumidityEl = $("<h6>").text("humidity: " + data.daily[i].humidity + "%");
-                var dailyWindEl = $("<h6>").text("wind: " + data.daily[i].wind_speed + "m/s");
+                var dailyTempEl = $("<h6>").text(data.daily[i].temp.day + "°C");
+                var dailyHumidityEl = $("<h6>").text(data.daily[i].humidity + "%");
+                var dailyWindEl = $("<h6>").text(data.daily[i].wind_speed + "m/s");
                 forecastCardEl.append(dailyDateEl, dailyIconEl, dailyTempEl, dailyHumidityEl, dailyWindEl);
                 forecastEl.append(forecastCardEl);
             }

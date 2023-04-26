@@ -1,0 +1,74 @@
+/* box displaying current weather */
+
+.weather-forecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    color: var(--white);
+}
+.city-weather {
+    margin-left: 10px;
+    height: 80vh;
+    width: 30vw;
+    background-color: var(--columnbg);
+}
+
+.UVindexLight {
+    background-color: rgba(0, 255, 8, 0.489);
+    width: 140px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.UVindexModerate {
+    background-color: rgba(255, 225, 0, 0.489);
+    width: 140px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.UVindexHigh {
+    background-color: rgba(255, 0, 0, 0.489);
+    width: 140px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.city-title {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weather-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4vh;
+}
+
+.city-weather h2 {
+    padding-top: 5px;
+    padding-left: 2vw;
+}
+
+.city-weather h4 {
+    padding-top: 5px;
+    padding-left: 2vw;
+}
+
+.city-weather h1 {
+    padding-top: 5px;
+    padding-left: 2vw;
+}
+
+.city-weather p {
+    margin: 3vw 0 0 2vw;
+
+}
+
+.weather-header p {
+    margin-left: 1vh;
+}
