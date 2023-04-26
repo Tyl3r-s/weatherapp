@@ -75,7 +75,7 @@ let weather = {
 // pass input from search-bar or history section to fetchCoords()
 var searchDemCities = function (event) {
     // sends search-bar value to fetchCoords, checks for search history, makes new button for city searched
-    if (event.target.matches('.searchIcon')) {
+    if (event.target.matches('.search-button')) {
         console.log('clicked')
         if ($('.search-bar').val() !== "") {
             const city = $('.search-bar').val().trim();
